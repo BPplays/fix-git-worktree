@@ -17,7 +17,7 @@ func ConvertWorktreeToRelativePath(path string, verbose bool) {
 	}
 
 	for _, file := range files {
-		gitdir_file_path := filepath.Join(path, ".git", "worktrees", file.Name(), "gitdir")
+		gitdir_file_path := filepath.Join(path, ".bare", "worktrees", file.Name(), "gitdir")
 		gitdir_value, err := ioutil.ReadFile(gitdir_file_path)
 		if err != nil {
 			log.Fatal(err)
